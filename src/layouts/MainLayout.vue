@@ -7,8 +7,8 @@
           <h5 class='q-mt-md q-mb-md text-weight-medium'><span class='text-blue'>Cargo</span><span class='text-orange'>Tracker</span></h5>
         </q-toolbar-title>
         <q-toolbar-title class='text-right q-ma-md'>
-          <q-avatar color='grey'>
-            <q-icon name='fa-solid fa-user' />
+          <q-avatar>
+            <img src="/profile-pic.png" />
           </q-avatar>
         </q-toolbar-title>
       </q-toolbar>

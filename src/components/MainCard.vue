@@ -17,20 +17,25 @@
           </q-input>
       </q-card-section>
       <q-card-section class='text-center q-pa-none'>
-        <q-btn label='Pesquisar' icon='search' class='center input' color='orange-5' padding='md' rounded @click.native='showLoading()'/>
+        <q-btn label='Search' icon='search' class='center input text-weight-bold' color='orange-5' padding='md' rounded @click.native='showLoading()'/>
       </q-card-section>
-
+      <MainCardResults v-if="results" />
     </q-card>
   </div>
 </template>
 
 <script>
 import { Loading } from 'quasar';
+import MainCardResults from 'src/components/MainCardResults.vue';
 
 export default {
+  components: {
+    MainCardResults
+  },
   data () {
     return {
-      text: ""
+      text: "",
+      results: false
     }
   },
   methods: {
@@ -41,7 +46,7 @@ export default {
       this.hideLoading();
     },
     hideLoading: function () {
-      setTimeout (() => Loading.hide(), 4000);
+      setTimeout (() => { Loading.hide(); this.results = true }, 4000);
     } 
   }
 }
