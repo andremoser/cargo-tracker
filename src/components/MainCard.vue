@@ -41,7 +41,7 @@ export default {
   methods: {
     showLoading: function () {
       Loading.show({
-        message: 'Aguarde, realizando a pesquisa...'
+        message: ''
       });
       this.hideLoading();
     },

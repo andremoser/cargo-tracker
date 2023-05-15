@@ -2,11 +2,20 @@
   <div class='full-width q-pa-lg rounded'>
     <Transition>
       <div>
-        <q-card v-for="item in items" :key="item.id" class='q-mb-sm q-pl-none q-pr-none q-pt-sm q-pb-sm bg-blue-2' flat >
+        <q-card v-for="item in items" :key="item.id" class='q-mb-sm q-pl-none q-pr-none q-pt-sm q-pb-sm card-hover' >
           <q-card-section class='flex flex-center row'>
-            <img :src="item.logo" class='col-2 col-sm-2'/>          
-            <span class='col-7 col-sm-7'>{{ item.message }}</span>
-            <img :src="item.type" class='col-2 col-sm-2' />
+            <div class='col-3 col-sm-2'>
+              <img :src="item.logo" class='img-logo' />     
+            </div>
+            <span class='col-9 col-sm-10'>
+              <span class='text-orange text-bold text-h7'>
+                {{ item.route }}
+              </span>
+              &nbsp;<img :src="item.type" class='img-modal-type'/>
+              <br />
+              {{ item.message }}
+            </span>
+            <!-- <img :src="item.type" class='col-2 col-sm-2 img-logo' /> -->
           </q-card-section>
         </q-card>
       </div>
@@ -22,12 +31,14 @@ export default {
         id: 1,
         logo: '/logos/maersk.svg',
         message: 'Mensagem',
-        type: 'ship.svg'
+        type: 'ship.svg',
+        route: 'CNTXG > SGSIN'
       }, {
         id: 2,
         logo: 'logos/msc.svg',
         message: 'Mensagem',
-        type: 'ship.svg'
+        type: 'ship.svg',
+        route: 'CNTXG > SGSIN'
       }]
 
     }
@@ -36,9 +47,20 @@ export default {
 </script>
 
 <style scoped>
-.card img {
+.card .img-logo {
   width: 40px;
   height: 40px;
+}
+
+.img-modal-type {
+  width: 25px;
+  height: 25px;
+  top: 5px;
+}
+
+.card-hover:hover {
+  outline: solid 2px orange;
+  cursor: pointer;
 }
 
 .v-enter-active,
