@@ -7,7 +7,7 @@
       <q-card-section class='q-pt-md q-pb-md'>
           <q-input 
             v-model="text"
-            label="Tracking Number" rounded outlined  class='input' color="orange-5">
+            label="Código de Rastreio" rounded outlined  class='input' color="orange-5">
             <template v-slot:prepend>
               <q-icon name="search" />
             </template>
@@ -17,7 +17,7 @@
           </q-input>
       </q-card-section>
       <q-card-section class='text-center q-pa-none'>
-        <q-btn label='Search' icon='search' class='center input text-weight-bold' color='orange-5' padding='md' rounded @click.native='showLoading()'/>
+        <q-btn label='Pesquisar' icon='search' class='center input text-weight-bold' color='orange-5' padding='md' rounded @click.native='showLoading()'/>
       </q-card-section>
       <MainCardResults v-if="results" />
     </q-card>
@@ -53,19 +53,21 @@ export default {
 </script>
 
 <style>
-@media (max-width: 999px) {
+@media (max-width: 768px) {
   .card {
     opacity: 0.97; 
+    height: 80vh;
     width: 380px;
     text-align: center;
     margin: auto;
+    overflow: auto;
   }
   .input {
     width: 260px;
     text-align: center;
   }
 }
-@media (min-width: 1000px) {
+@media (min-width: 769px) {
   .card {
     opacity: 0.97; 
     width: 100%;
@@ -73,7 +75,7 @@ export default {
     margin: auto;
   }
   .input {
-    width: 380px;
+    width: 480px;
     text-align: center;
   }
 }

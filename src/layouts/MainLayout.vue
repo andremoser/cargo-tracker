@@ -19,8 +19,8 @@
     <q-drawer  v-model="leftDrawerOpen" side="left">
       <div class="bg-blue full-height full-width row">
         <ul class='text-white text-h6 cursor-pointer q-pt-lg'>
-          <li @click="leftDrawerOpen = false; $router.push('/')">Home</li>
-          <li @click="leftDrawerOpen = false; $router.push('/dashboard')">My Trackings</li>
+          <li @click="leftDrawerOpen = false; $router.push('/')">Início</li>
+          <li @click="leftDrawerOpen = false; $router.push('/dashboard')">Meus Rastreios</li>
         </ul>
       </div>
 
